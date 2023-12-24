@@ -1,18 +1,16 @@
-
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: second-pod
+  name: my-web-app
   labels:
-    app: Nada
-    label-name-1: label-value
-    another-label: my-app-name
-
+    app: db
 spec:
   containers:
-    - image: nginx:alpine
-      name: nginx-container
+    - name: my-nginx-app
+      image: nadamohamed030/nginx-fci
+      imagePullPolicy: IfNotPresent
+
       ports:
         - containerPort: 80
+
       
